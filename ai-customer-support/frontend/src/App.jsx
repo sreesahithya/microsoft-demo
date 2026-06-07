@@ -46,6 +46,20 @@ function App() {
     alert(error.response?.data?.message || "Signup Failed");
   }
 };
+const logout = () => {
+  localStorage.removeItem("token");
+
+  setLoggedIn(false);
+  setPdfUploaded(false);
+
+  setChat([]);
+  setHistory([]);
+  setQuestion("");
+  setPdf(null);
+
+  setEmail("");
+  setPassword("");
+};
 
   // ================= LOGIN =================
   const login = async () => {
@@ -209,7 +223,17 @@ function App() {
 
         {/* Chat Area */}
         <div className="chatPage">
-          <h2>Chat with PDF 🤖</h2>
+
+  <div className="chatHeader">
+    <h2>Chat with PDF 🤖</h2>
+
+    <button
+      className="logoutBtn"
+      onClick={logout}
+    >
+      ← Back to Login
+    </button>
+  </div>
 
           <div className="chatBox">
             {chat.map((msg, i) => (
