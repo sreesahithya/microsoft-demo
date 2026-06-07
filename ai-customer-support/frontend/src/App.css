@@ -1,0 +1,289 @@
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #2b1d17;
+  color: white;
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+}
+
+/* ================= LOGIN PAGE ================= */
+
+.authBox {
+  width: 420px;
+  padding: 40px;
+  background: #3a2a23;
+  border-radius: 20px;
+  margin: 100px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.authBox h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.authBox input {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid #5d4337;
+  background: #2b1d17;
+  color: white;
+  outline: none;
+}
+
+.btnRow {
+  display: flex;
+  gap: 10px;
+}
+
+.primary,
+.secondary {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.primary {
+  background: #a9745b;
+  color: white;
+}
+
+.secondary {
+  background: #4d372d;
+  color: white;
+}
+
+/* ================= UPLOAD PAGE ================= */
+
+.uploadPage {
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+
+  background: #2b1d17;
+}
+
+.uploadPage h2 {
+  font-size: 32px;
+}
+
+.uploadPage input[type="file"] {
+  background: #3a2a23;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+.uploadBtn {
+  background: #a9745b;
+  color: white;
+  border: none;
+
+  padding: 14px 28px;
+  border-radius: 12px;
+
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ================= CHAT LAYOUT ================= */
+
+.chatContainer {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+  width: 260px;
+  background: #1f1714;
+  border-right: 1px solid #4d372d;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.newChatBtn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #a9745b;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.historyList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.historyItem {
+  padding: 10px;
+  border-radius: 8px;
+  background: #352620;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.historyItem:hover {
+  background: #4d372d;
+}
+
+/* ================= CHAT PAGE ================= */
+
+.chatPage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #2b1d17;
+}
+
+.chatPage h2 {
+  padding: 18px;
+  text-align: center;
+  border-bottom: 1px solid #4d372d;
+}
+
+/* ================= CHAT BOX ================= */
+
+.chatBox {
+  flex: 1;
+  overflow-y: auto;
+
+  padding: 25px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* USER MESSAGE */
+
+.msg.user {
+  align-self: flex-end;
+
+  background: #a9745b;
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  max-width: 75%;
+  line-height: 1.6;
+}
+
+/* BOT MESSAGE */
+
+.msg.bot {
+  align-self: flex-start;
+
+  background: #3b2b24;
+
+  padding: 14px 18px;
+  border-radius: 18px;
+
+  max-width: 75%;
+  line-height: 1.6;
+}
+
+/* ================= INPUT ================= */
+
+.inputBox {
+  display: flex;
+  align-items: center;
+
+  width: 90%;
+  max-width: 900px;
+
+  margin: 15px auto;
+
+  background: #352620;
+
+  border-radius: 30px;
+
+  padding: 10px;
+}
+
+.inputBox input {
+  flex: 1;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  color: white;
+  font-size: 15px;
+
+  padding: 10px 15px;
+}
+
+.inputBox button {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #a9745b;
+  color: white;
+
+  cursor: pointer;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.chatBox::-webkit-scrollbar,
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sendBtn {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #a9745b;
+  color: white;
+
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+
+  flex: none;
+}
+
+.chatBox::-webkit-scrollbar-thumb,
+.sidebar::-webkit-scrollbar-thumb {
+  background: #5d4337;
+  border-radius: 10px;
+}
