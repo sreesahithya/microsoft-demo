@@ -17,6 +17,7 @@ function App() {
   const [history, setHistory] = useState([]);
 
   // ================= SIGNUP =================
+  const API_URL = "https://microsoft-demo-1.onrender.com";
    useEffect(() => {
   if (loggedIn && pdfUploaded) {
     loadHistory();
@@ -24,7 +25,7 @@ function App() {
 }, [loggedIn, pdfUploaded]);
   const signup = async () => {
   try {
-    const res = await axios.post("http://localhost:5000/signup", {
+    const res = await axios.post(`${API_URL}/signup`, {
       email,
       password,
     });
@@ -33,7 +34,7 @@ function App() {
     alert(res.data.message);
 
     // ✅ AUTO LOGIN AFTER SIGNUP
-    const loginRes = await axios.post("http://localhost:5000/login", {
+    const loginRes = await axios.post(`${API_URL}/login`, {
       email,
       password,
     });
@@ -49,7 +50,7 @@ function App() {
   // ================= LOGIN =================
   const login = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/login", {
+      const res = await axios.post(`${API_URL}/login`, {
         email,
         password,
       });
@@ -65,7 +66,7 @@ function App() {
     const token = localStorage.getItem("token");
 
     const res = await axios.get(
-      "http://localhost:5000/chat-history",
+      `${API_URL}/chat-history`,
       {
         headers: {
           Authorization: token,
@@ -90,7 +91,7 @@ function App() {
     formData.append("pdf", pdf);
 
     const res = await axios.post(
-      "http://localhost:5000/upload-pdf",
+      `${API_URL}/upload-pdf`,
       formData,
       {
         headers: {
@@ -127,7 +128,7 @@ function App() {
 
   try {
     const res = await axios.post(
-      "http://localhost:5000/chat",
+      `${API_URL}/chat`,
       { question: currentQuestion },
       {
         headers: {

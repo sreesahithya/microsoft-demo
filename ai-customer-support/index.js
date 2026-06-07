@@ -20,7 +20,17 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "https://microsoft-demo-2.onrender.com",
+    ],
+    credentials: true,
+  })
+);
+
+app.use(express.json());
 app.use(express.json());
 
 // ================= DATABASE =================
@@ -548,14 +558,11 @@ async function startServer() {
   try {
     await loadEmbedder();
 
-    app.listen(
-      5000,
-      () => {
-        console.log(
-          "Server running on port 5000 🚀"
-        );
-      }
-    );
+   const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} 🚀`);
+});
 
   } catch (err) {
     console.log(
